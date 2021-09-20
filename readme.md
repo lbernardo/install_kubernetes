@@ -1,5 +1,6 @@
 # Install kubernetes on a single node
 
 ```console
-./install.sh
+# With root
+curl https://raw.githubusercontent.com/lbernardo/install_kubernetes/master/install.sh | bash
 ```

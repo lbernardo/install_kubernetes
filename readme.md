@@ -1,4 +1,4 @@
-# Install Kubernetes in Only node
+# Install kubernetes on a single node
 
 ```console
 ./install.sh

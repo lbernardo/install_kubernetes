@@ -49,7 +49,11 @@ sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
 println_info "Starting kubeadm init"
-kubeadm init
+
+echo "Public DNS cluster:"
+read endpoint
+
+kubeadm init --control-plane-endpoint ${endpoint}
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config

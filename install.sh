@@ -50,7 +50,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 println_info "Starting kubeadm init"
 
-if [[ -z "${PUBLIC_IP}" ]]; then
+if [ -z "${PUBLIC_IP}" ]; then
   echo "Public DNS cluster:"
   read endpoint
 else

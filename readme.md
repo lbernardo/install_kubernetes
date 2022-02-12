@@ -2,11 +2,6 @@
 
 `With root`
 ```console
+export PUBLIC_IP=XXXXXXX
 curl https://raw.githubusercontent.com/lbernardo/install_kubernetes/master/install.sh | bash
-```
-
-# Create user
-
-```console
-curl https://raw.githubusercontent.com/lbernardo/install_kubernetes/master/create-user.sh | bash
 ```

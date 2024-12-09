@@ -49,7 +49,8 @@ EOF
 sudo sysctl --system
 
 # Inicializando o cluster Kubernetes
-CONTROL_PLANE_ENDPOINT=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)
+TOKEN=$(curl -sX PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
+CONTROL_PLANE_ENDPOINT=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4 -H "X-aws-ec2-metadata-token: $TOKEN")
 echo "Inicializando o cluster Kubernetes..."
 sudo kubeadm init --control-plane-endpoint $CONTROL_PLANE_ENDPOINT --pod-network-cidr=192.168.0.0/16
 
